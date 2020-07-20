@@ -1,12 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Button, Alert } from 'react-native';
+//custom component
+import {TextBox} from './components/TextBox';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Hello World!</Text>
+      <Text style={styles.greeting}>Hello World!</Text>
+      <Button title="Click Me Now" color="blue"  onPress={()=> Alert.alert('You just pressed a button')}></Button>
       <StatusBar style="auto" />
+      <TextBox color="green" size="24" text="Custom Component"/>
+      <TextBox color="black" size="18" text="Another Custom Component"/>
     </View>
   );
 }
@@ -18,4 +23,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  greeting:{
+    color:'red',
+    fontSize:40
+
+  }
 });
